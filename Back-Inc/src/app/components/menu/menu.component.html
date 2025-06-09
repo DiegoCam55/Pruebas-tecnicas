@@ -2,11 +2,11 @@
 <div class="content">
     <nav class="sidebar-menu">
         <h2>Categorias</h2>
-        <ul>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Productos</a></li>
-            <li><a href="#">Categorías</a></li>
-            <li><a href="#">Contacto</a></li>
+        <ul class="truncate">
+            @for (categoria of categories; track $index) {
+
+            <li><span>{{ categoria.name }}</span></li>
+            }
         </ul>
     </nav>
 </div>

@@ -32,3 +32,9 @@
  .sidebar-menu a:hover {
      color: #1976d2;
  }
+
+ .truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

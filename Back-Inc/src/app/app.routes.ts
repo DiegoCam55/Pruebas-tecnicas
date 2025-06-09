@@ -1,14 +1,26 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './pages/home/home.component';
 
 export const routes: Routes = [
   {
-    path: '',
-    redirectTo: '/home',
-    pathMatch: 'full',
+    path: 'dashboard',
+    loadComponent: () =>
+      import('./dashboard/dashboard.component').then(
+        (m) => m.DashboardComponent
+      ),
+    children: [
+      {
+        path: 'product',
+        title: 'product',
+        loadComponent: () =>
+          import('./dashboard/pages/product-list/product-list.component').then(
+            (m) => m.ProductListComponent
+          ),
+      },
+    ],
   },
   {
-    path: 'home',
-    component: HomeComponent,
+    path: '',
+    redirectTo: '/dashboard/product',
+    pathMatch: 'full',
   },
 ];

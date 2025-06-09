@@ -1,1 +1,8 @@
-<p>card works!</p>
+<div class="product-card">
+    <img [src]="product.images[0]" [alt]="product.title" class="product-image" />
+    <div class="product-info">
+        <h3>{{ product.title }}</h3>
+        <p>{{ product.price | currency }}</p>
+        <span class="product-category">{{ product.category.name }}</span>
+    </div>
+</div>

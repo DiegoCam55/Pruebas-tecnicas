@@ -1,6 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { ProductsService } from '../../services/products.service';
-import { Category } from '../../interfaces/ProductoCategoria';
+import { ProductsService } from '../../dashboard/services/products.service';
+import { Category } from '../../dashboard/interfaces/ProductoCategoria';
+ 
 
 @Component({
   selector: 'app-menu',

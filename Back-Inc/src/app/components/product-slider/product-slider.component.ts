@@ -1,8 +1,8 @@
 import { Component, OnInit, OnDestroy, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ProductsService } from '../../services/products.service';
-import { Producto } from '../../interfaces/ProductoCategoria';
-// Removed incorrect import of setInterval for browser compatibility
+import { ProductsService } from '../../dashboard/services/products.service'; 
+import { Producto } from '../../dashboard/interfaces/ProductoCategoria';
+ 
 
 @Component({
   selector: 'app-product-slider',

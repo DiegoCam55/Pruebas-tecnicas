@@ -17,4 +17,9 @@ export class ProductsService {
   getAllproduct() {
     return this.http.get<Producto[]>(`${this.URLApi}products`);
   }
+  getSearchAllproduct(searchTerm: string) {
+    return this.http.get<Producto[]>(
+      `${this.URLApi}products/?title=${searchTerm}`
+    );
+  }
 }

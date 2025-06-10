@@ -7,15 +7,25 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import {
   HttpClientModule,
   provideHttpClient,
-  withFetch, 
+  withFetch,
 } from '@angular/common/http';
+import { provideStore } from '@ngrx/store';
+import { provideStoreDevtools } from '@ngrx/store-devtools';
+import { appReducers } from './app.reducer';
+import { environment } from '../environment';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
     provideClientHydration(),
-    provideAnimationsAsync(), 
+    provideAnimationsAsync(),
     importProvidersFrom(HttpClientModule),
-    provideHttpClient(withFetch())
+    provideHttpClient(withFetch()),
+
+    provideStore(appReducers),
+    provideStoreDevtools({
+      maxAge: 25,
+      logOnly: environment.production,
+    }),
   ],
 };

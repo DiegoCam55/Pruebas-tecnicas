@@ -1,8 +1,7 @@
 import { Component, OnInit, OnDestroy, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ProductsService } from '../../dashboard/services/products.service'; 
+import { ProductsService } from '../../dashboard/services/products.service';
 import { Producto } from '../../dashboard/interfaces/ProductoCategoria';
- 
 
 @Component({
   selector: 'app-product-slider',
@@ -20,8 +19,13 @@ export class ProductSliderComponent implements OnInit {
   items: Producto[] = [];
 
   ngOnInit() {
-    this.productsService.getAllproduct().subscribe((data) => {
-      this.items = data.slice(10, 30); //
+    this.productsService.getAllproduct().subscribe({
+      next: (data: Producto[]) => {
+        this.items = data.slice(10, 30);
+      },
+      error: (err) => {
+        console.error('Error al obtener productos:', err);
+      },
     });
   }
 

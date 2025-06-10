@@ -1,4 +1,4 @@
- .sidebar-menu {
+.sidebar-menu {
      position: fixed;
      height: 100vh;
      width: 15vh;
@@ -36,4 +36,34 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.category-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.category-list li {
+  margin-bottom: 16px;
+}
+
+.category-btn {
+  width: 100%;
+  background: none;
+  border: none;
+  color: #333;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: left;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.category-btn.active,
+.category-btn:hover {
+  background: #1976d2;
+  color: #fff;
 }

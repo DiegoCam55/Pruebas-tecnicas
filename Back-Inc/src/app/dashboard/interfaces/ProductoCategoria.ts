@@ -8,6 +8,7 @@ export interface Producto {
     images:      string[];
     creationAt:  Date;
     updatedAt:   Date;
+    stock?:       number;
 }
 
 export interface Category {

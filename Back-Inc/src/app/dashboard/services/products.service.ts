@@ -17,6 +17,11 @@ export class ProductsService {
   getAllproduct() {
     return this.http.get<Producto[]>(`${this.URLApi}products`);
   }
+  getCategoriesProduct(categoryId: number) {
+    return this.http.get<Producto[]>(
+      `${this.URLApi}products/?categoryId=${categoryId}`
+    );
+  }
   getSearchAllproduct(searchTerm: string) {
     return this.http.get<Producto[]>(
       `${this.URLApi}products/?title=${searchTerm}`
